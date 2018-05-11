@@ -94,9 +94,9 @@ $(function () {
         var inBirthday = $("#inBirth").val();
         var inEmail = $("#inputemail").val();
 
-        $("#confirm_data").append("<div id='confirmData'><h4>請務必填寫正確資訊，若因資料不正確或非本人以致無法完成試穿流程，將無法獲贈免費內衣！奧黛莉保留活動內容解釋及調整權力。</h4><p>您預約的店櫃為:" + inStore + 
-        "</p><p>日期為:" + inDate +
-        "</p><p>時間為:" + inTime +
+        $("#confirm_data").append("<div id='confirmData'><h6>請務必填寫正確資訊，若因資料不正確或非本人以致無法完成試穿流程，將無法獲贈免費內衣！台灣奧黛莉(股)公司保留活動內容解釋及調整權力。</h6><p>您預約的店櫃為:" + inStore + 
+        "</p><p>日期:" + inDate +
+        "</p><p>時間:" + inTime +
         "</p><p>您的尺寸:" + inSize +
         "</p><p>您的姓名:" + inName +
         "</p><p>您的連絡電話:" + inPhone +

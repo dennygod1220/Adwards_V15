@@ -22,7 +22,11 @@ Route.post('/invoiceok','GuestinfoController.store').validator('guestinfo')
 //預約試穿
 Route.on('/testdress').render('testdress')
 //內衣密碼
-Route.on('/underwearsecret').render('underwearsecret')
+Route.on('/underwearsecrect1').render('underwearsecrect/1')
+Route.on('/underwearsecrect2').render('underwearsecrect/2')
+Route.on('/underwearsecrect3').render('underwearsecrect/3')
+Route.on('/underwearsecrect4').render('underwearsecrect/4')
+
 //門市活動
 Route.on('/storeactive').render('storeactive')
 //新品介紹
