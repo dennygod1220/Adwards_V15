@@ -117,16 +117,6 @@ $(function () {
         var inPhone = $("#inputcellphone").val();
         var inBirthday = $("#inBirth").val();
         var inEmail = $("#inputemail").val();
-        // console.log("======================");
-        // console.log("店櫃:"+inStore);
-        // console.log("日期:"+inDate);
-        // console.log("時間:"+inTime);
-        // console.log("尺寸:"+inSize);
-        // console.log("名字:"+inName);
-        // console.log("電話:"+inPhone);
-        // console.log("生日:"+inBirthday);
-        // console.log("Email:"+inEmail);
-        // console.log("=====================================");
 
 
         if (inEmail == "" || inBirthday=="" || inPhone==""||inName==""||inSize==""||inTime==""||inDate==""||inStore=="") {
@@ -140,6 +130,25 @@ $(function () {
             }
     
     })
+
+    $("#confirm1").click(function(){
+        var inStore = $("#store_id :selected").text();
+        var inDate = $("#inpdate").val();
+        var inTime = $("#select_time :selected").text();
+        var inSize = $("#input_size").val();
+        var inName = $("#inputname").val();
+        var inPhone = $("#inputcellphone").val();
+        var inBirthday = $("#inBirth").val();
+        var inEmail = $("#inputemail").val();
+
+        if (inEmail == "" || inBirthday=="" || inPhone==""||inName==""||inSize==""||inTime==""||inDate==""||inStore=="") {
+            $("#exampleModalCenter3").modal('show')
+        }
+        else{
+            $("#exampleModalLong2").modal('show');
+        }
+    })
+
 
 
     $("#exportPDF").click(function(){
@@ -185,7 +194,7 @@ $(function () {
     //     });
     //   });
     document.getElementById('pdf').addEventListener('click', function() {
-    let el = document.getElementById('exampleModalCenter'); // 获得目标元素
+    let el = document.getElementById('exampleModalLong2'); // 获得目标元素
     html2canvas(el, {
        background: '#fff',  // 背景设置
         //Whether to attempt to load cross-origin images as CORS served, 

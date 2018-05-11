@@ -252,7 +252,7 @@
   <div class="col-sm-2">
     {{--  <button id="submitbtn" class="btn form-control btn-info">確認預約</button>  --}}
     <!-- Button trigger modal -->
-<button type="button" class="btn form-control btn-info" data-toggle="modal" data-target="#exampleModalLong">
+<button type="button" class="btn form-control btn-info"  id="confirm1">
   確認預約
 </button>
 
@@ -319,7 +319,8 @@
         
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary btnleave" data-dismiss="modal">填錯了，重新填寫</button>
+        <button type="button" class="btn btn-secondary btnleave" data-dismiss="modal">重新填寫</button>
+        <button type="button" class="btn btn-primary" id="pdf">下載</button>        
         <button type="button" class="btn btn-primary" id="submitbtn">確認</button>
       </div>
     </div>
@@ -334,40 +335,7 @@
 </form>
 </div>
 
-<div style="height:30px"></div>
 
-<div class="row">
-  <div class="col-sm-5"></div>
-  <div class="col-sm-2">
-
-
-    <button type="button" class="btn form-control btn-info" data-toggle="modal" data-target="#exampleModalCenter" id="exportPDF">
-      下載預約資料
-    </button>
-  </div>
-
-  <div class="col-sm-5"></div>
-</div>
-
-<!-- Button trigger modal -->
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style="margin: 0px auto;">
-        <img src="./img/new/audreylogo.png" style="align:center;max-height: 100px;" class="img-fluid mx-auto" alt="">   
-      </div>
-      <div class="modal-body" id="guest_infomation">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="pdfclose">關閉</button>
-        <button type="button" class="btn btn-primary" id="pdf">下載</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 {{--  沒填完資料的提醒  --}}

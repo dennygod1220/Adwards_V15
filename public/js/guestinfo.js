@@ -56,12 +56,11 @@ $("#gonow").css("z-index","99")
 $("#gonow").css("width","80px")
 $("#gonow").css("position","fixed")
 if(wdth < 680){
-  $("#gonow").css("display","none")
 }
 $(window).resize(function() {
   const wdth=$(window).width();
   if(wdth < 680){
-    $("#gonow").css("display","none")
+
   }else if(wdth >680){
     $("#gonow").css("display","inline")
     $("#gonow").css("position","fixed")
