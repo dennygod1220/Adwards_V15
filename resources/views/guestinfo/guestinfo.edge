@@ -107,6 +107,8 @@
 
               </select>
               <small class="form-text text-info" id="storeadd"></small>
+              <small class="form-text text-info Invisible" id="storephone"></small>
+              
               {{--  validator 驗證是否有填值  --}}
               @if(hasErrorFor('store_id'))
               <small class="form-text text-danger">店櫃忘了填</small>
@@ -320,7 +322,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary btnleave" data-dismiss="modal">重新填寫</button>
-        <button type="button" class="btn btn-primary" id="pdf">下載</button>        
+        <button type="button" class="btn btn-primary" id="pdf">下載預約資料</button>        
         <button type="button" class="btn btn-primary" id="submitbtn">確認</button>
       </div>
     </div>
@@ -392,6 +394,12 @@
 <select id="invisible_storeaddress" class="Invisible">
   @each(item in restructur_storeinfo)
   <option value="{{item.id}}">{{item.sotre_address}}</option>
+  @endeach
+</select>
+
+<select id="invisible_storephone" class="Invisible">
+  @each(item in restructur_storeinfo)
+  <option value="{{item.id}}">{{item.store_phone}}</option>
   @endeach
 </select>
 

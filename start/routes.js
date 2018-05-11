@@ -8,7 +8,7 @@ Route.on('/').render('awardsindex.index')
 
 //20180421_因不須跳到別的頁面輸入發票號碼，因此直接從'/'發送post請求到invoiceok頁面
 // Route.on('/reservationnow').render('awardsindex.reservationnow')
-Route.post('/','AwardsIndexController.check')
+Route.post('/','AwardsIndexController.check').validator('invoicecheck')
 
 //填個人資料，發票符合資格才能到達此頁
 //0509不擋發票了，所以拿掉middleware

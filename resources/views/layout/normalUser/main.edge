@@ -101,8 +101,13 @@ body{
 {{--  月曆元件  --}}
 <script type="text/javascript">
   $(function () {
+
+    var startDay = moment('2018-05-18');
+    var testD2 = moment('2018-07-02');
+
+
     var minDate = moment().add(3,'days');
-    var maxDate = moment("2018-07-01");
+    var maxDate = moment("2018-06-19");    
     //限制只能選擇3天候
     $('#date1').datetimepicker({
       format: 'YYYY-MM-DD',
@@ -149,7 +154,7 @@ $("#store_id").change(function(){
         minDate:  moment("2018-06-11"),
         maxDate:  moment("2018-06-18"),     
         //disabledDates: disable_date
-              icons: {
+        icons: {
         up: "fa fa-chevron-circle-up",
         down: "fa fa-chevron-circle-down",
         next: 'fa fa-chevron-circle-right',

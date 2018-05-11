@@ -17,7 +17,7 @@ class GuestinfoController {
     const storeinfo_1 =await storemodel.all()
     const storeinfo = storeinfo_1.toJSON()
     //取得store info 資料
-    const restructur_storeinfo = await Database.select('id', 'store_area','store_name','time_id','sotre_address').from('store_infos')
+    const restructur_storeinfo = await Database.select('id', 'store_area','store_name','time_id','sotre_address','store_phone').from('store_infos')
     //取得store_area並用sql 直接去除重複丟到前端去
     const store_area_distinct = await Database.select('store_area').from('store_infos').distinct('store_area')
     //取得目前各店櫃預約的狀況，每天的每個時段只能有一組客人

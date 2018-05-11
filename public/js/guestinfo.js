@@ -75,6 +75,8 @@ $(window).resize(function() {
   const store_name = [];
   //儲存地址
   const store_address = [];
+  //儲存電話
+  const store_phone = [];  
   //儲存精簡過的地區資料
   //取得隱形select 中含有多少個 option 將值存入陣列中方便操作
   var store_len = $("#invisible_storearea").children().length;
@@ -96,6 +98,12 @@ $(window).resize(function() {
       address: $("#invisible_storeaddress option").eq(i).text()
     }
     store_address.push(reg3)
+
+    let reg4 ={
+      id: $("#invisible_storephone option").eq(i).val(),
+      phone: $("#invisible_storephone option").eq(i).text()
+    }
+    store_phone.push(reg4)
   }
   //======================當使用者選擇了商店地區=========================
   $("#store_area").change(function () {
@@ -122,6 +130,7 @@ $(window).resize(function() {
     for(let i = 0;i<store_len2; i++){
       if(sel_id == store_address[i].id){
         $("#storeadd").text(store_address[i].address)
+        $("#storephone").text(store_phone[i].phone)        
       }
     }
   })

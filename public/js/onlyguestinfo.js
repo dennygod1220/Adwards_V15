@@ -93,6 +93,9 @@ $(function () {
         var inPhone = $("#inputcellphone").val();
         var inBirthday = $("#inBirth").val();
         var inEmail = $("#inputemail").val();
+        var storeAdd = $("#storeadd").text();
+        var storephone = $("#storephone").text();
+        
 
         $("#confirm_data").append("<div id='confirmData'><h6>請務必填寫正確資訊，若因資料不正確或非本人以致無法完成試穿流程，將無法獲贈免費內衣！台灣奧黛莉(股)公司保留活動內容解釋及調整權力。</h6><p>您預約的店櫃為:" + inStore + 
         "</p><p>日期:" + inDate +
@@ -101,36 +104,20 @@ $(function () {
         "</p><p>您的姓名:" + inName +
         "</p><p>您的連絡電話:" + inPhone +
         "</p><p>生日:" + inBirthday +
-        "</p><p>Email:" + inEmail+"</p></div>")
+        "</p><p>Email:" + inEmail+
+        "</p><p>店櫃地址:" + storeAdd +
+        "</p><p>店櫃電話:" + storephone +
+        "</p></div>")
     })
     $(".btnleave").click(function(){
         $("#confirmData").remove();
     })
 
-    //======================按下送出按鈕時跳出確認提醒
+    //========預約==========
     $("#submitbtn").click(function () {
-        var inStore = $("#store_id :selected").text();
-        var inDate = $("#inpdate").val();
-        var inTime = $("#select_time :selected").text();
-        var inSize = $("#input_size").val();
-        var inName = $("#inputname").val();
-        var inPhone = $("#inputcellphone").val();
-        var inBirthday = $("#inBirth").val();
-        var inEmail = $("#inputemail").val();
-
-
-        if (inEmail == "" || inBirthday=="" || inPhone==""||inName==""||inSize==""||inTime==""||inDate==""||inStore=="") {
-            // alert("請確認資料輸入完成，謝謝");
-            $("#exampleModalLong2").modal('hide');
-            $("#confirmData").remove();
-            $("#exampleModalCenter3").modal('show')
-            return false;
-        }else {
-                document.forms[1].submit();
-            }
-    
+        document.forms[1].submit();
     })
-
+//================當客人點擊 確認預約按鈕時  做一個基本的資料都有填寫確認 ，若是資歷都填完了就會跳出 隱私權同意
     $("#confirm1").click(function(){
         var inStore = $("#store_id :selected").text();
         var inDate = $("#inpdate").val();
@@ -140,12 +127,13 @@ $(function () {
         var inPhone = $("#inputcellphone").val();
         var inBirthday = $("#inBirth").val();
         var inEmail = $("#inputemail").val();
-
         if (inEmail == "" || inBirthday=="" || inPhone==""||inName==""||inSize==""||inTime==""||inDate==""||inStore=="") {
             $("#exampleModalCenter3").modal('show')
         }
         else{
-            $("#exampleModalLong2").modal('show');
+
+        $("#exampleModalLong").modal('show');  
+
         }
     })
 

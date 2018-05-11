@@ -80,6 +80,9 @@ $(window).resize(function () {
           <div class="form-group">
             <label><span class="isneedicon">*</span>您的發票號碼:</label>
             <input type="text" name="invoice_num" class="form-control" placeholder="EX:DR89736950">
+            @if(hasErrorFor('invoice_num'))
+            <small class="form-text text-danger">{{getErrorFor('invoice_num')}}</small>
+            @endif
           </div>
         </div>
       </div>
