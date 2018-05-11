@@ -23,7 +23,25 @@
 body{
       overflow-x: hidden;
 }
-  
+.ui-datepicker {
+  font-size: 25px !important;
+}
+.ui-datepicker .ui-datepicker-next .ui-icon{
+    background: url(http://i.imgur.com/DyQTbOA.png);
+    width: 50px;
+    height: 50px;
+    left:0px;
+    top:9px;
+}
+.ui-datepicker .ui-datepicker-prev .ui-icon {
+    background: url(http://i.imgur.com/hBFw2TW.png);
+    width: 50px;
+    height: 50px;
+    position:absolute;
+    left:12px;
+    top:9px;
+}
+
   </style>
 </head>
 
@@ -75,6 +93,11 @@ body{
 <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">    
 <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/locale/af.js"></script>
+
+
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet"/>
 {{--  月曆元件  --}}
 <script type="text/javascript">
   $(function () {
@@ -84,11 +107,17 @@ body{
     $('#date1').datetimepicker({
       format: 'YYYY-MM-DD',
       locale: moment.locale('zh-cn'),
-        inline: true,
-        sideBySide: true,
-        keepOpen: true,
-        minDate: minDate,
-        maxDate: maxDate,    
+      inline: true,
+      sideBySide: true,
+      keepOpen: true,
+      minDate: minDate,
+      maxDate: maxDate,
+      icons: {
+        up: "fa fa-chevron-circle-up",
+        down: "fa fa-chevron-circle-down",
+        next: 'fa fa-chevron-circle-right',
+        previous: 'fa fa-chevron-circle-left'
+      }
     });
     $('#date1').datetimepicker('show');
 
@@ -120,6 +149,12 @@ $("#store_id").change(function(){
         minDate:  moment("2018-06-11"),
         maxDate:  moment("2018-06-18"),     
         //disabledDates: disable_date
+              icons: {
+        up: "fa fa-chevron-circle-up",
+        down: "fa fa-chevron-circle-down",
+        next: 'fa fa-chevron-circle-right',
+        previous: 'fa fa-chevron-circle-left'
+      }
     });
     $('#date1').datetimepicker('show');
   }
@@ -136,7 +171,13 @@ $("#store_id").change(function(){
         keepOpen: true,
         minDate:  moment("2018-06-10"),
         maxDate:  moment("2018-06-18"),     
-        disabledDates: disable_date
+        disabledDates: disable_date,
+              icons: {
+        up: "fa fa-chevron-circle-up",
+        down: "fa fa-chevron-circle-down",
+        next: 'fa fa-chevron-circle-right',
+        previous: 'fa fa-chevron-circle-left'
+      }
     });
     $('#date1').datetimepicker('show');
   }
@@ -151,11 +192,19 @@ $("#store_id").change(function(){
         sideBySide: true,
         keepOpen: true,
         minDate: minDate, 
-        maxDate: maxDate
+        maxDate: maxDate,
+              icons: {
+        up: "fa fa-chevron-circle-up",
+        down: "fa fa-chevron-circle-down",
+        next: 'fa fa-chevron-circle-right',
+        previous: 'fa fa-chevron-circle-left'
+      }
     });
     $('#date1').datetimepicker('show');
   }
 })
+
+
 
 });
 

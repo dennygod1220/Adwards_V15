@@ -1,16 +1,38 @@
  @layout('layout/normalUser/main')
   @section('content')
 
-<div class="row no-gutters">
-<div class="col">
-  <img src="./img/0510/index/homepage.png" class="img" alt="" style="width:100%">
   <a href="/#formbody">
     <img id="gonow" src="./img/new/BTN.png" alt="">
   </a>
-</div>
+
+<div class="carousel-item active">
+  <img src="./img/0510/index/homepage.png" class="img" alt="" style="width:100%">
 </div>
 <div class="row" style="height:50px">
 </div>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+const wdth=$(window).width();
+$("#gonow").css("position","fixed")
+$("#gonow").css("z-index","99")
+$("#gonow").css("margin-top","60px")
+$("#gonow").css("width","80px")
+if(wdth < 680){
+  $("#gonow").css("display","none")
+}
+$(window).resize(function() {
+  const wdth=$(window).width();
+  if(wdth < 680){
+    $("#gonow").css("display","none")
+  }else if(wdth >680){
+    $("#gonow").css("display","inline")
+    $("#gonow").css("position","fixed")
+  }
+})
+  
+</script>
 
 {{--  ====================================================================================  --}}
 
@@ -47,7 +69,7 @@
         <div class="card-body" id="formbody">
           <div class="form-group">
             <label><span class="isneedicon">*</span>您的發票號碼:</label>
-            <input type="text" name="invoice_num" class="form-control" placeholder="發票號碼">
+            <input type="text" name="invoice_num" class="form-control" placeholder="EX:DR89736950">
           </div>
         </div>
       </div>

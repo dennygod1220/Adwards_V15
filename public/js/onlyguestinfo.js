@@ -57,7 +57,8 @@ $(function () {
             }
         }
         if (key2 >= 1) {
-            alert("此時段預約已滿，請重新選擇，謝謝")
+            // alert("此時段預約已滿，請重新選擇，謝謝")
+            $("#exampleModalCenter4").modal('show')
             $("#inputTime").val("");
             $("#select_time").val("請挑選時段");
         }
@@ -93,7 +94,7 @@ $(function () {
         var inBirthday = $("#inBirth").val();
         var inEmail = $("#inputemail").val();
 
-        $("#confirm_data").append("<div id='confirmData'><p>您預約的店櫃為:" + inStore + 
+        $("#confirm_data").append("<div id='confirmData'><h4>請務必填寫正確資訊，若因資料不正確或非本人以致無法完成試穿流程，將無法獲贈免費內衣！奧黛莉保留活動內容解釋及調整權力。</h4><p>您預約的店櫃為:" + inStore + 
         "</p><p>日期為:" + inDate +
         "</p><p>時間為:" + inTime +
         "</p><p>您的尺寸:" + inSize +
@@ -128,8 +129,11 @@ $(function () {
         // console.log("=====================================");
 
 
-        if (inEmail == "") {
-            alert("請確認資料輸入完成，謝謝");
+        if (inEmail == "" || inBirthday=="" || inPhone==""||inName==""||inSize==""||inTime==""||inDate==""||inStore=="") {
+            // alert("請確認資料輸入完成，謝謝");
+            $("#exampleModalLong2").modal('hide');
+            $("#confirmData").remove();
+            $("#exampleModalCenter3").modal('show')
             return false;
         }else {
                 document.forms[1].submit();

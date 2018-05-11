@@ -117,7 +117,7 @@
               <label for="date">
                 <span class="isneedicon">*</span>您選擇的日期:</label>
               <div>{{-- 透過月曆元件產生，js在layout/normalUser/forguestinfo中 --}}</div>
-              <div class="input-group datepicker date" id='date1'>
+              <div class="input-group datepicker date" id='date1' style="display: inline-block;margin: 0 auto;">
                 <input id="inpdate" name="date" type="hidden" class="form-control">
               </div>
 
@@ -174,7 +174,7 @@
             </div>
             <div class="form-group" style="display:none" id="phonepart">
               <label>
-                <span class="isneedicon">*</span>行動電話:<small class="form-text text-danger" id="phonealert">務必為本人門號，以便發送邀請簡</small></label>
+                <span class="isneedicon">*</span>行動電話:<small class="form-text text-danger" id="phonealert">務必為本人門號，以便發送邀請簡訊</small></label>
 
                 
               <input type="text" id="inputcellphone" name="cell_phone" class="form-control" placeholder="請輸入您的行動電話號碼" aria-describedby="phoneHelp" readonly> 
@@ -257,8 +257,8 @@
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <img src="./img/new/audreylogo.png" style="align:center" class="img-responsive center-block" alt="">   
+      <div class="modal-header" style="margin: 0px auto;">
+        <img src="./img/new/audreylogo.png" style="align:center;max-height: 100px;" class="img-fluid mx-auto" alt="">   
       </div>
       <div class="modal-body">
         <h3>同意隱私權保密條款</h3>
@@ -309,8 +309,8 @@
 <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <img src="./img/new/audreylogo.png" style="align:center" class="img-responsive center-block" alt="">   
+      <div class="modal-header" style="margin: 0px auto;">
+        <img src="./img/new/audreylogo.png" style="align:center;max-height: 100px;" class="img-fluid mx-auto" alt="">   
       </div>
       <div class="modal-body" id="confirm_data">
         
@@ -331,6 +331,8 @@
 </form>
 </div>
 
+<div style="height:30px"></div>
+
 <div class="row">
   <div class="col-sm-5"></div>
   <div class="col-sm-2">
@@ -350,8 +352,8 @@
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <img src="./img/new/audreylogo.png" style="align:center" class="img-responsive center-block" alt="">   
+      <div class="modal-header" style="margin: 0px auto;">
+        <img src="./img/new/audreylogo.png" style="align:center;max-height: 100px;" class="img-fluid mx-auto" alt="">   
       </div>
       <div class="modal-body" id="guest_infomation">
         
@@ -359,6 +361,45 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" id="pdfclose">關閉</button>
         <button type="button" class="btn btn-primary" id="pdf">下載</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{{--  沒填完資料的提醒  --}}
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="margin: 0px auto;">
+        <img src="./img/new/audreylogo.png" style="align:center;max-height: 100px;" class="img-fluid mx-auto" alt="">   
+      </div>
+      <div class="modal-body">
+        請確認資料輸入完成，謝謝
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{{--  時段以滿提醒 --}}
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="margin: 0px auto;">
+        <img src="./img/new/audreylogo.png" style="align:center;max-height: 100px;" class="img-fluid mx-auto" alt="">   
+      </div>
+      <div class="modal-body">
+        此時段預約已滿，請重新選擇，謝謝
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -404,12 +445,20 @@
 
 <script src="./lib/html2canvas.js"></script>
 <script src="./lib/jspdf.js"></script>
-{{ script('https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js')}}
+
 {{ script('https://cdn.jsdelivr.net/npm/vue/dist/vue.js')}}
+{{ script('https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js')}}
 {{ script('./js/guestinfo.js') }}
 {{ script('./js/onlyguestinfo.js') }}
 
 
 
 @endsection
+
+
+
+
+
+
+
 
